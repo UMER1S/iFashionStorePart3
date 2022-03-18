@@ -4,6 +4,8 @@ import javafx.beans.property.*;
 
 import java.util.ArrayList;
 
+import java.sql.*;
+
 
 public class Item
 {
@@ -20,7 +22,10 @@ public class Item
 
 
 
-    public Item(ResultSet rs){
+    public Item(ResultSet resultSet) throws SQLException {
+        while(resultSet.next()){
+            //TODO: add data from sql results set to correct fields
+        }
 
     }
 
