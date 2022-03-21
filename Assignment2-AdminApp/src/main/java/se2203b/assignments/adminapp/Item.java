@@ -10,9 +10,10 @@ import java.sql.*;
 public class Item
 {
     private SimpleStringProperty                      name;
-    private SimpleStringProperty                      itemID;
+    private SimpleIntegerProperty                     itemID;
+    private SimpleStringProperty                      category;
+    private SimpleStringProperty                      subCategory;
     private SimpleStringProperty                      department;
-    private ArrayList<Category>                       category;
     private SimpleStringProperty                      brand;
     private SimpleStringProperty                      description;
     private SimpleDoubleProperty                      price;
@@ -21,37 +22,44 @@ public class Item
     private ArrayList<CommentsFeedback>               comments;
 
 
-
-    public Item(ResultSet resultSet) throws SQLException {
-        while(resultSet.next()){
-            //TODO: add data from sql results set to correct fields
-        }
-
-    }
-
-    public Item(String name, String itemID, String department, ArrayList<Category> category, String brand, String description, Double price, ArrayList<String> sizes, Integer stock, ArrayList<CommentsFeedback> comments) {
-        this.name.set(name);
-        this.itemID.set(itemID);
-        this.department.set(department);
-        this.category = category;
-        this.brand.set(brand);
-        this.description.set(description);
-        this.price.set(price);
-        this.stock.set(stock);
+    public Item(String name, int itemID, String department, String category, String subCategory, String brand, String description, Double price, Integer stock, ArrayList<CommentsFeedback> comments) {
+        this.name = new SimpleStringProperty(name);
+        this.itemID = new SimpleIntegerProperty(itemID);
+        this.department = new SimpleStringProperty(department);
+        this.category = new SimpleStringProperty(category);
+        this.subCategory = new SimpleStringProperty(subCategory);
+        this.brand = new SimpleStringProperty(brand);
+        this.description = new SimpleStringProperty(description);
+        this.price = new SimpleDoubleProperty(price);
+        this.stock = new SimpleIntegerProperty(stock);
         this.comments = comments;
-        for (String size : sizes) this.sizes.add(new SimpleStringProperty(size));
+        //for (String size : sizes) this.sizes.add(new SimpleStringProperty(size));
     }
 
-    public String getItemID() {
+    // ALL THE GETTER/SETTER METHODS ARE BELOW
+
+    public int getItemID() {
         return itemID.get();
     }
 
-    public SimpleStringProperty itemIDProperty() {
+    public SimpleIntegerProperty itemIDProperty() {
         return itemID;
     }
 
-    public void setItemID(String itemID) {
+    public String getName() {
+        return name.get();
+    }
+
+    public void setItemID(int itemID) {
         this.itemID.set(itemID);
+    }
+
+    public SimpleStringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
     }
 
     public String getDepartment() {
@@ -66,20 +74,28 @@ public class Item
         this.department.set(department);
     }
 
-    public ArrayList<Category> getCategory() {
+    public String getCategory() {
+        return category.get();
+    }
+
+    public SimpleStringProperty categoryProperty() {
         return category;
     }
 
-    public void setCategory(ArrayList<Category> category) {
-        this.category = category;
+    public void setCategory(String category) {
+        this.category.set(category);
     }
 
-    public void addCategory(Category category) {
-        this.category.add(category);
+    public String getSubCategory() {
+        return subCategory.get();
     }
 
-    public void removeCategory(Category category) {
-        this.category.remove(category);
+    public SimpleStringProperty subCategoryProperty() {
+        return subCategory;
+    }
+
+    public void setSubCategory(String subCategory) {
+        this.subCategory.set(subCategory);
     }
 
     public String getBrand() {

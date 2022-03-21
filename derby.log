@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Mar 20 22:47:13 EDT 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017f-aa5f-1899-00001e43b8e0 
+on database directory C:\Users\Piotr\Documents\GitHub\SE2203\Asn3\iFashionStore with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@31cefde0 
+Loaded from file:/C:/Users/Piotr/Downloads/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=17.0.1+12-LTS-39
+user.dir=C:\Users\Piotr\Documents\GitHub\SE2203\Asn3
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

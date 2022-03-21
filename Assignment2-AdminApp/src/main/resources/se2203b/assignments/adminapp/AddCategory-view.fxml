@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="266.0" prefWidth="231.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se2203b.assignments.adminapp.AddCategoryController">
+   <children>
+      <Button fx:id="submitCatBtn" layoutX="164.0" layoutY="54.0" mnemonicParsing="false" onAction="#addCategory" text="Submit" />
+      <Button fx:id="cancelBtn" layoutX="14.0" layoutY="225.0" mnemonicParsing="false" onAction="#exit" text="Cancel" />
+      <ComboBox fx:id="catCmbo" layoutX="14.0" layoutY="131.0" prefWidth="150.0" promptText="Category" />
+      <Label layoutX="40.0" layoutY="14.0" text="Add new Category" />
+      <Label layoutX="31.0" layoutY="95.0" text="Add new Subcategory" />
+      <TextField fx:id="catTxt" layoutX="16.0" layoutY="54.0" promptText="Category Name" />
+      <TextField fx:id="subCatTxt" layoutX="15.0" layoutY="183.0" promptText="Subcategory Name" />
+      <Label fx:id="reqSubCatLbl" layoutX="15.0" layoutY="166.0" text="*required" textFill="RED" visible="false" />
+      <Label fx:id="reqCatLbl" layoutX="15.0" layoutY="37.0" text="*required" textFill="RED" visible="false" />
+      <Button fx:id="submitSubCatBtn" layoutX="163.0" layoutY="183.0" mnemonicParsing="false" onAction="#addSubCategory" text="Submit" />
+      <Label fx:id="reqCatLbl2" layoutX="15.0" layoutY="113.0" text="*required" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>
